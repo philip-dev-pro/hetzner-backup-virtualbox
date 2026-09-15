@@ -15,7 +15,13 @@ The task is to find a way to create a downloadable backup file of a running Hetz
 Hetzner Cloud does not allow users to download server backups as files; backups can only be restored inside Hetzner. We need to find an independent solution to extract the server as a file and run it outside of Hetzner.
 
 ### 2. Available Solutions & Research
-- *Status:* Research is currently ongoing. We are reviewing the provided task description, community discussions, and testing available methods to create an exportable image.
+We evaluated three primary methods for extracting the server image:
+
+*Hetzner Native Snapshots: While fast and easy to create, they are proprietary and cannot be exported or downloaded as files, making them unsuitable for our goal of provider independence.
+
+*Rsync (File-level migration): This would involve copying only the files and databases. While efficient in terms of size, it is complex to set up a new bootable OS and match all configurations manually in a local environment.
+
+*DD (Disk Dump) via SSH: We decided on this method because it creates a bit-by-bit copy of the entire storage block. By piping the output through gzip over an SSH connection, we could stream a complete, bootable image directly to our local machine without needing extra storage on the cloud server.
 
 ---
 
