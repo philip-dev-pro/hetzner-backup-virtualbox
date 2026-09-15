@@ -36,8 +36,8 @@ Hetzner Cloud does not allow users to download server backups as files; backups 
 ---
 
 ## Phase 3: Testing & Finalization
-- [ ] Test the backup in VirtualBox.
-- [ ] Check that the website works.
+- [x] Test the backup in VirtualBox.
+- [x] Check that the website works.
 
 ---
 
