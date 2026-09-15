@@ -9,7 +9,7 @@ The task is to find a way to create a downloadable backup file of a running Hetz
 
 ---
 
-## Phase 1: Research Phase (Feasibility Study) - WORK IN PROGRESS
+## Phase 1: Research Phase (Feasibility Study)
 
 ### 1. Problem Statement
 Hetzner Cloud does not allow users to download server backups as files; backups can only be restored inside Hetzner. We need to find an independent solution to extract the server as a file and run it outside of Hetzner.
