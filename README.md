@@ -77,7 +77,15 @@ Once the backup file was downloaded, we finalized the migration with these steps
 ---
 
 ## Conclusion
-*(To be written when the project is done)*
+The project was a success. We achieved the goal of breaking "vendor lock-in" by creating a fully functional, independent backup of a cloud-based WordPress server.
+
+Key Takeaways:
+
+* Block-level Backups: We learned how to use dd to clone entire operating systems over a network.
+* Virtualization: We gained experience in converting disk formats and configuring local hypervisors (VirtualBox) to match cloud-based hardware specs (EFI, Network adapters).
+* Troubleshooting: We learned how to perform a root password reset via GRUB Recovery Mode and how to handle WordPress database redirects using the hosts file trick.
+
+This procedure provides a reliable way to migrate or backup any Linux cloud instance for local development or disaster recovery purposes.
 
 ---
 
