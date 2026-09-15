@@ -44,7 +44,12 @@ We evaluated three primary methods for extracting the server image:
 ## Phase 3: Testing & Finalization
 - [x] Test the backup in VirtualBox.
 - [x] Check that the website works.
+Once the backup file was downloaded, we finalized the migration with these steps:
 
+1.Decompression & Conversion: We used gunzip to extract the raw image and then utilized VBoxManage to convert it into a .vdi format, which is native to VirtualBox.
+2.VM Configuration: A new Virtual Machine was created with 4GB RAM and 2 CPUs. We specifically enabled EFI (Extensible Firmware Interface) in the system settings to match the Hetzner Cloud boot requirements.
+3.Network Hardware Abstraction: Because the virtualized hardware differs from the cloud environment, we updated the Netplan configuration inside Ubuntu to use DHCP. This allowed the VM to receive a local IP address from our router.
+4.Verification: We confirmed that the apache2 (web server) and mysql (database) services started automatically upon boot.
 ---
 
 ## Phase 4: Problems & Solutions
