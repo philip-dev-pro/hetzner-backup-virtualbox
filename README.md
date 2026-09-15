@@ -55,6 +55,10 @@ Hetzner Cloud does not allow users to download server backups as files; backups 
 * **Problem:** Hetzner deployed the server using only SSH keys, meaning there was no known local root password to log in via the VirtualBox console screen.
 * **Solution:** Booted the VM into GRUB Recovery Mode, remounted the filesystem as read-write (`mount -o remount,rw /`), and set a local password using `passwd root`.
 
+### Problem 4: WordPress Redirecting to the Live Domain
+* **Problem:** When navigating to the local VM's IP address (`192.168.1.99`), WordPress automatically redirected the browser to `wordpress.multinomial.se` (which pointed to Hetzner's live IP on the internet).
+* **Solution:** Updated the local Windows `hosts` file (`C:\Windows\System32\drivers\etc\hosts`) to map `wordpress.multinomial.se` directly to the local VM IP (`192.168.1.99`), ensuring all traffic stayed 100% local.
+
 ---
 
 ## Conclusion
