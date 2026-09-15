@@ -65,7 +65,7 @@ We evaluated three primary methods for extracting the server image:
 * **Problem:** When navigating to the local VM's IP address (`192.168.1.99`), WordPress automatically redirected the browser to `wordpress.multinomial.se` (which pointed to Hetzner's live IP on the internet).
 * **Solution:** Updated the local Windows `hosts` file (`C:\Windows\System32\drivers\etc\hosts`) to map `wordpress.multinomial.se` directly to the local VM IP (`192.168.1.99`), ensuring all traffic stayed 100% local.
 
-### 5. Problem: Virtual Machine Freezing and Long Boot Delays
+### Problem 5: Virtual Machine Freezing and Long Boot Delays
 * **Problem:** The restored virtual machine took several minutes to boot and frequently appeared completely stuck during startup. This happened because `cloud-init` was continuously searching and waiting for network responses from Hetzner's cloud metadata services, which do not exist outside of Hetzner.
 * **Solution:** We disabled cloud-init by running `touch /etc/cloud/cloud-init.disabled` inside the server. This completely removed the timeout loops, prevented the machine from hanging, and reduced boot time down to just a few seconds.
 
