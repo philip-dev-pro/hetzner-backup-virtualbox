@@ -89,5 +89,3 @@ This procedure provides a reliable way to migrate or backup any Linux cloud inst
 
 ---
 
-## Video Demonstration
-- [ ] Record a minimum 4-minute video in English explaining the project and demonstrating the result.
